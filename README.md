@@ -1,13 +1,22 @@
-# 🎮 CodeRebels Portfolio - AleeJi
+# CodeRebels Portfolio - AleeJi
 
-Portafolio profesional para desarrollador de servidores Minecraft. Especializado en la creación, configuración y administración de servidores personalizados.
+**Minecraft Server Developer Portfolio**  
+Creating unique gaming experiences since November 2020
 
-## 🌟 Características
+## 🎮 Live Site
+👉 https://ram5028.github.io
 
-- 🎨 **Diseño Moderno**: Tema morado con toques Minecraft
-- 📱 **Responsive**: Compatible con móviles, tablets y desktop
-- ⚡ **Rendimiento Optimizado**: Carga rápida y animaciones suaves
-- 🎯 **SEO Friendly**: Meta tags optimizados para buscadores
-- 🔧 **Fácil de Modificar**: Código bien estructurado y comentado
+## ✨ Current Project
+**RebelStreamSMP** - Survival server with 10+ active players
 
-## 🚀 Estructura del Proyecto
+## 🛠️ Built With
+- HTML5, CSS3, JavaScript
+- Responsive Design
+- GitHub Pages
+
+## 📫 Connect
+- **Email**: coderebels.developer@gmail.com
+- **Discord**: ale.ij
+
+© 2024 AleeJi - CodeRebels Development
+
