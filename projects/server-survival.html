@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RebelStreamSMP - Detalles del Servidor | CodeRebels</title>
+    
+    <!-- Enlaces a CSS -->
+    <link rel="stylesheet" href="../css/style.css"> <!-- ← CON ../ porque está en carpeta projects -->
+    <link rel="stylesheet" href="../css/animations.css"> <!-- ← CON ../ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+    
+    <!-- Fuente Minecraft -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Detalles completos del servidor RebelStreamSMP - Survival Minecraft 1.20.1">
+    <meta name="keywords" content="Minecraft, Survival SMP, RebelStreamSMP, CodeRebels, AleeJi">
+    
+    <!-- Estilos específicos para esta página -->
+    <style>
+        /* Estilos para la página de detalles del servidor */
+        .server-header {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+            position: relative;
+            padding-top: 100px;
+            overflow: hidden;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        
+        .server-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+        }
+        
+        .server-badge-large {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.6);
+            margin-bottom: 2rem;
+            animation: pulse-glow 3s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .server-badge-large i {
+            font-size: 1.5rem;
+        }
+        
+        .server-title-main {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        .server-subtitle {
+            font-size: 1.4rem;
+            color: var(--gray-text);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .server-quick-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 2.5rem 0;
+        }
+        
+        .quick-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(139, 92, 246, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--card-border);
+        }
+        
+        .quick-info-item i {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+        }
+        
+        .quick-info-item span {
+            color: var(--light-text);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .btn-large {
+            padding: 1.5rem 3.5rem;
+            font-size: 1.3rem;
+        }
+        
+        /* Sección de detalles */
+        .server-details-section {
+            background: var(--darker-bg);
+        }
+        
+        .server-story {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 25px;
+            border: 3px solid var(--card-border);
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .server-story h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-light);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .server-story p {
+            color: var(--light-text);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .server-story strong {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+        
+        .server-features-detailed {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(16, 185, 129, 0.1));
+            padding: 3rem;
+            border-radius: 25px;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .server-features-detailed h3 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            color: var(--primary-light);
+        }
+        
+        .features-grid-detailed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-detailed {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid var(--card-border);
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-detailed:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .feature-content h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--light-text);
+        }
+        
+        .feature-content p {
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+        
+        /* Sección de plugins */
+        .plugins-section {
+            background: linear-gradient(180deg, var(--darker-bg) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+        
+        .plugins-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .plugins-category {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 25px;
+            border: 3px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+        
+        .plugins-category h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--card-border);
+        }
+        
+        .plugins-category h3 i {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+        }
+        
+        .plugins-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .plugins-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .plugins-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .plugins-list li strong {
+            display: block;
+            color: var(--light-text);
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .plugins-list li span {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+        }
+        
+        .plugins-note {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: rgba(245, 158, 11, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid var(--accent-color);
+            margin-top: 2rem;
+        }
+        
+        .plugins-note i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+        
+        .plugins-note p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        /* Galería */
+        .gallery-section {
+            background: var(--darker-bg);
+        }
+        
+        .gallery-placeholder {
+            background: var(--card-bg);
+            padding: 5rem 3rem;
+            border-radius: 25px;
+            border: 3px dashed var(--card-border);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .gallery-message {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gallery-message i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .gallery-message h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-light);
+        }
+        
+        .gallery-message p {
+            color: var(--light-text);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .gallery-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2.5rem;
+            text-align: left;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+        
+        .gallery-features li {
+            color: var(--gray-text);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .gallery-features i {
+            font-size: 1rem;
+            color: var(--accent-color);
+        }
+        
+        /* Estadísticas */
+        .stats-section {
+            background: linear-gradient(180deg, var(--darker-bg) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .stat-card-large {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 25px;
+            border: 3px solid var(--card-border);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card-large:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+        
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .stat-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .stat-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        .stat-content p {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .stat-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .stat-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+            transition: width 1.5s ease-out;
+        }
+        
+        .achievements {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(245, 158, 11, 0.1));
+            padding: 3rem;
+            border-radius: 25px;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .achievements h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary-light);
+        }
+        
+        .achievements-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .achievement {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--card-border);
+        }
+        
+        .achievement i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-top: 0.3rem;
+            flex-shrink: 0;
+        }
+        
+        .achievement h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+        }
+        
+        .achievement p {
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(16, 185, 129, 0.2));
+            border-top: 4px solid var(--secondary-color);
+            border-bottom: 4px solid var(--primary-color);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-light);
+        }
+        
+        .cta-content p {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        
+        .cta-note {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(245, 158, 11, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--accent-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-note i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+        
+        .cta-note p {
+            color: var(--light-text);
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        /* Footer para esta página */
+        .footer-nav {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .footer-nav a {
+            color: var(--gray-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .server-title-main {
+                font-size: 2.8rem;
+            }
+            
+            .server-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .server-quick-info {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .features-grid-detailed {
+                grid-template-columns: 1fr;
+            }
+            
+            .plugins-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVEGACIÓN ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-dragon"></i>
+                <span class="logo-text">Alee<span class="logo-rebel">Ji</span></span>
+                <span class="logo-subtitle">CodeRebels Dev</span>
+            </a>
+            
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html" class="nav-link">← Volver al Portafolio</a></li> <!-- ← QUITÉ #inicio -->
+      <li><a href="#detalles" class="nav-link">Detalles</a></li>
+      <li><a href="#plugins" class="nav-link">Plugins</a></li>
+      <li><a href="#galeria" class="nav-link">Galería</a></li>
+      <li><a href="#stats" class="nav-link">Estadísticas</a></li>
+    </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HEADER DEL SERVIDOR ===== -->
+    <header class="server-header">
+        <div class="container">
+            <div class="server-header-content">
+                <div class="server-badge-large">
+                    <i class="fas fa-crown"></i>
+                    <span>Servidor Principal</span>
+                </div>
+                
+                <h1 class="server-title-main">RebelStreamSMP</h1>
+                <p class="server-subtitle">Survival Multiplayer • Minecraft 1.20.1 • Activo desde Noviembre 2025</p>
+                
+                <div class="server-quick-info">
+                    <div class="quick-info-item">
+                        <i class="fas fa-users"></i>
+                        <span>10+ Jugadores activos</span>
+                    </div>
+                    <div class="quick-info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>99.9% Uptime</span>
+                    </div>
+                    <div class="quick-info-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Comunidad Activa</span>
+                    </div>
+                </div>
+                
+                <a href="../index.html#contacto" class="btn btn-primary btn-large">
+                    <i class="fas fa-envelope"></i> Solicitar Acceso
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== SECCIÓN DETALLES ===== -->
+    <section id="detalles" class="section server-details-section">
+        <div class="container">
+            <h2 class="section-title">Sobre RebelStreamSMP</h2>
+            
+            <div class="server-story">
+                <h3>La Historia del Servidor</h3>
+                <p>RebelStreamSMP nació en <strong>Noviembre de 2025</strong> como mi primer proyecto serio de servidor Minecraft. 
+                Comenzó como un pequeño servidor Survival para Streamers, y rápidamente creció hasta convertirse en 
+                una comunidad de 10+ jugadores activos.</p>
+                
+                <p>La filosofía del servidor es simple: <strong>Mantener la esencia vanilla de Minecraft mientras se añaden 
+                mejoras de calidad de vida</strong> que realmente importan a los jugadores.</p>
+            </div>
+            
+            <div class="server-features-detailed">
+                <h3>Características Principales</h3>
+                
+                <div class="features-grid-detailed">
+                    <div class="feature-detailed">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Crates/Cofres</h4>
+                            <p>Sistema de Crates/Cofres con un diseño personalizado para el servidor. Los jugadores pueden
+                            reclamar objetos de diferente raresa dependiendo la crate que elegio.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-detailed">
+                        <div class="feature-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Economía Dinámica</h4>
+                            <p>Sistema económico basado en diamantes con tiendas player-to-player. Los precios fluctúan 
+                            según la oferta y demanda de la comunidad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-detailed">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Misiones</h4>
+                            <p>Sistema de misiones con recompensas especiales. Desde cazar mobs 
+                            específicos hasta construir estructuras únicas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-detailed">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Eventos Semanales</h4>
+                            <p>Competiciones de construcción, cacerías de bosses y eventos PvP organizados cada semana 
+                            con premios exclusivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN PLUGINS ===== -->
+    <section id="plugins" class="section plugins-section">
+        <div class="container">
+            <h2 class="section-title">Plugins Configurados</h2>
+            <p class="section-subtitle">Una selección cuidadosa de plugins para la mejor experiencia</p>
+            
+            <div class="plugins-categories">
+                <div class="plugins-category">
+                    <h3><i class="fas fa-shield-alt"></i> Protección</h3>
+                    <ul class="plugins-list">
+                        <li>
+                            <strong>WorldGuard</strong>
+                            <span>Protección de áreas específicas del mundo</span>
+                        </li>
+                        <li>
+                            <strong>CoreProtect</strong>
+                            <span>Registro de acciones y rollback de greifing</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="plugins-category">
+                    <h3><i class="fas fa-cogs"></i> Utilidades</h3>
+                    <ul class="plugins-list">
+                        <li>
+                            <strong>EssentialsX</strong>
+                            <span>Comandos esenciales y sistema de homes</span>
+                        </li>
+                        <li>
+                            <strong>Vault</strong>
+                            <span>Sistema de permisos y economía unificado</span>
+                        </li>
+                        <li>
+                            <strong>LuckPerms</strong>
+                            <span>Sistema avanzado de permisos y grupos</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="plugins-category">
+                    <h3><i class="fas fa-gamepad"></i> Jugabilidad</h3>
+                    <ul class="plugins-list">
+                        <li>
+                            <strong>CrazyCrates</strong>
+                            <span>Sistema de crates dando objetos de diferente raresa</span>
+                        </li>
+                        <li>
+                            <strong>Quests</strong>
+                            <span>Sistema de misiones con recompensas especiales</span>
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="plugins-note">
+                <i class="fas fa-lightbulb"></i>
+                <p><strong>Nota:</strong> Todos los plugins han sido configurados cuidadosamente para mantener el balance 
+                del juego y la estabilidad del servidor. La lista completa incluye 15+ plugins adicionales 
+                para mejorar la experiencia sin sobrecargar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN GALERÍA ===== -->
+    <section id="galeria" class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galería del Servidor</h2>
+            <p class="section-subtitle">Capturas de la comunidad y construcciones destacadas</p>
+            
+            <div class="gallery-placeholder">
+                <div class="gallery-message">
+                    <i class="fas fa-camera"></i>
+                    <h3>Galería en Desarrollo</h3>
+                    <p>Estoy recopilando las mejores capturas de la comunidad. Pronto podrás ver:</p>
+                    <ul class="gallery-features">
+                        <li><i class="fas fa-check"></i> Construcciones épicas de los jugadores</li>
+                        <li><i class="fas fa-check"></i> Eventos y competiciones</li>
+                        <li><i class="fas fa-check"></i> Bases y proyectos comunitarios</li>
+                        <li><i class="fas fa-check"></i> Momentos divertidos de la comunidad</li>
+                    </ul>
+                    <a href="../index.html#contacto" class="btn btn-secondary">
+                        <i class="fas fa-image"></i> Enviar tus Capturas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN ESTADÍSTICAS ===== -->
+    <section id="stats" class="section stats-section">
+        <div class="container">
+            <h2 class="section-title">Estadísticas y Logros</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card-large">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Disponibilidad</h3>
+                        <div class="stat-number">99.9%</div>
+                        <p>Tiempo activo del servidor</p>
+                        <div class="stat-bar">
+                            <div class="stat-progress" style="width: 99.9%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card-large">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Comunidad</h3>
+                        <div class="stat-number">10+</div>
+                        <p>Jugadores activos semanales</p>
+                        <div class="stat-bar">
+                            <div class="stat-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card-large">
+                    <div class="stat-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Plugins</h3>
+                        <div class="stat-number">15+</div>
+                        <p>Plugins configurados y optimizados</p>
+                        <div class="stat-bar">
+                            <div class="stat-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card-large">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Eventos</h3>
+                        <div class="stat-number">12+</div>
+                        <p>Eventos organizados exitosamente</p>
+                        <div class="stat-bar">
+                            <div class="stat-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievements">
+                <h3>Logros Destacados</h3>
+                <div class="achievements-list">
+                    <div class="achievement">
+                        <i class="fas fa-medal"></i>
+                        <div>
+                            <h4>Estabilidad Comprobada</h4>
+                            <p>3 meses de operación continua sin caídas importantes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h4>Comunidad Crecida Orgánicamente</h4>
+                            <p>De 3 amigos iniciales a 10+ jugadores activos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement">
+                        <i class="fas fa-code"></i>
+                        <div>
+                            <h4>Configuración Optimizada</h4>
+                            <p>Reducción del lag en un 70% mediante optimizaciones</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Interesado en Unirte?</h2>
+                <p>RebelStreamSMP es un servidor de comunidad cercana. Si buscas un ambiente amigable 
+                para jugar Survival Minecraft, ¡este es tu lugar!</p>
+                
+                <div class="cta-buttons">
+                    <a href="../index.html#contacto" class="btn btn-primary btn-large">
+                        <i class="fas fa-user-plus"></i> Solicitar Acceso
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Volver al Portafolio
+                    </a>
+                </div>
+                
+                <div class="cta-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>Nota:</strong> El servidor está actualmente en modo comunidad cerrada. 
+                    Nuevos miembros son aceptados mediante referencia o aplicación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <i class="fas fa-dragon"></i>
+                            <div>
+                                <span class="brand-name">RebelStreamSMP</span>
+                                <span class="brand-tag">Por AleeJi - CodeRebels Development</span>
+                            </div>
+                        </div>
+                        <p class="brand-motto">Survival con corazón, comunidad con propósito</p>
+                    </div>
+                    
+                    <div class="footer-nav">
+                        <a href="../index.html">Portafolio Principal</a>
+                        <a href="../index.html#contacto">Contacto</a>
+                        <a href="#detalles">Detalles del Servidor</a>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>&copy; 2023-2024 AleeJi - CodeRebels Development. RebelStreamSMP no está afiliado con Mojang/Microsoft.</p>
+                        <p class="footer-note">Minecraft es una marca registrada de Mojang Studios</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Enlaces a JavaScript -->
+    <script src="../js/script.js"></script> <!-- ← CON ../ -->
+    <script src="../js/menu.js"></script> <!-- ← CON ../ -->
+    <script src="../js/animations.js"></script> <!-- ← CON ../ -->
+    
+    <!-- Script específico para esta página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar menú
+            if (window.CodeRebelsMenu) {
+                const menu = new window.CodeRebelsMenu();
+            }
+            
+            // Añadir efecto de scroll suave para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Efecto de carga para imágenes futuras
+            const imagePlaceholders = document.querySelectorAll('.gallery-placeholder');
+            imagePlaceholders.forEach(placeholder => {
+                placeholder.addEventListener('click', () => {
+                    alert('La galería estará disponible pronto. ¡Sigue atento a las actualizaciones!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
